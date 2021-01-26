@@ -1,4 +1,9 @@
 ## FIFO Compliant Inventory Management System 
+a FIFO Compliant Inventory Management System that aims to develop a system which simplifies the inventory management procedures of small retail business and provides analysis to support business decisions.
+   
+   
+
+
 
 ### design:
 
