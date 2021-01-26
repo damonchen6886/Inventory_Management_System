@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is a test file</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+<!--    <script>-->
+
+<!--        $(function () {-->
+<!--            $("#form").submit(function () {-->
+<!--                var n = $("#ref").val();-->
+<!--                $.get("cat/getOne", {ref:n}, function (data) {-->
+<!--                    alert(data);-->
+<!--                });-->
+<!--                return false;-->
+<!--            });-->
+<!--        });-->
+
+<!--    </script>-->
+
+    <script>
+
+        $.get("item/getAll", function (data) {
+            for (var i = 0; i < data.length; i++) {
+                for (var key in data[i]) {
+                    if (data[i].hasOwnProperty(key)) {
+                        console.log(key + " -> " + data[i][key]);
+                    }
+                }
+            }
+        }, "json")
+
+    </script>
+</head>
+<body>
+<input type="button" value="send ajax" onclick="fun();">
+
+<!--<form id="form">-->
+<!--    <label for="ref">Name</label><br>-->
+<!--    <input type="text" name="ref" id="ref"><br>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+
+</body>
+
+
+</html>

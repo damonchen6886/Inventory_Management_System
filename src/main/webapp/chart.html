@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+        var chart;
+        var data;
+        var options;
+
+        function drawChart() {
+            dataTable = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2004',  1000,      400],
+                ['2005',  1170,      460],
+                ['2006',  660,       1120],
+                ['2007',  1030,      540]
+            ]);
+
+            options = {
+                title: 'Company Performance',
+                hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+            };
+
+            chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(dataTable, options);
+        }
+
+        // function to update the chart with new data.
+        function updateChart() {
+
+            dataTable = new google.visualization.DataTable();
+
+            var newData = [['Year', 'Sales', 'Expenses' , 'Other'],
+                ['2004',  1000,      400     ,  232   ],
+                ['2005',  1170,      460    ,  421   ],
+                ['2006',  660,       1120    ,  4324  ],
+                ['2007',  1030,      540     ,  4234  ],
+                ['2008',  1530,      50     ,    234  ]];
+
+            // determine the number of rows and columns.
+            var numRows = newData.length;
+            var numCols = newData[0].length;
+
+            // in this case the first column is of type 'string'.
+            dataTable.addColumn('string', newData[0][0]);
+
+            // all other columns are of type 'number'.
+            for (var i = 1; i < numCols; i++)
+                dataTable.addColumn('number', newData[0][i]);
+
+            // now add the rows.
+            for (var i = 1; i < numRows; i++)
+                dataTable.addRow(newData[i]);
+
+            // redraw the chart.
+            chart.draw(dataTable, options);
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<button id="bu" onclick='updateChart();'>update chart</button>
+</body>
+</html>
