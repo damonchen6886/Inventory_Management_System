@@ -5,10 +5,10 @@ a FIFO Compliant Inventory Management System that aims to develop a system which
 
 
 
-### design:
+### Design:
 
    
-#### system Architecture:
+#### System Architecture:
 
 ![alt text](https://github.com/damonchen6886/inventory_management_system/blob/master/System%20Architecure.png?raw=true)
    
@@ -21,7 +21,7 @@ a FIFO Compliant Inventory Management System that aims to develop a system which
    
   
 
-#### sample UI 
+#### Sample UI 
 ![alt text](https://github.com/damonchen6886/inventory_management_system/blob/master/chart.jpg?raw=true)
 
 
@@ -39,8 +39,6 @@ Inventory analysis(profit/turnover ratio)
 
 
 
-
-;
 
 
 
